@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon</title>
+    <link rel="stylesheet" href="simon.css">
+</head>
+<body>
+    <!-- Animated background elements -->
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+
+    <div class="container">
+        <button class="back-btn" id="back" onclick="location.href='../index.html'">Back</button>
+        <h1>Simon</h1>
+        
+        <div class="status" id="status">Press START to play</div>
+        
+        <div class="game-section">
+            <div class="game-board">
+                <div class="quadrant position-1" id="quadrant-0">1</div>
+                <div class="quadrant position-2" id="quadrant-1">2</div>
+                <div class="quadrant position-3" id="quadrant-2">3</div>
+                <div class="quadrant position-4" id="quadrant-3">4</div>
+                <div class="quadrant position-5" id="quadrant-4">5</div>
+                <div class="quadrant position-6" id="quadrant-5">6</div>
+                <div class="quadrant position-7" id="quadrant-6">7</div>
+                <div class="quadrant position-8" id="quadrant-7">8</div>
+                <div class="quadrant position-9" id="quadrant-8">9</div>
+            </div>
+            
+            <div class="control-panel">
+                <div class="score-display" id="score">0</div>
+                
+                <div class="main-controls">
+                    <button class="start-btn" id="start">Start</button>
+                    <button class="strict-btn" id="strict">Strict</button>
+                    <button class="reset-btn" id="reset">Reset</button>
+                </div>
+                
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="best-score">0</div>
+                        <div>Best</div>
+                    </div>
+        
+                    <div class="stat-item">
+                        <div class="stat-value" id="speed">1x</div>
+                        <div>Speed</div>
+                    </div>
+                </div>
+                <div class="extra-controls">
+                    <button class="settings-btn" id="speed-up">Speed Up</button>
+                    <button class="settings-btn" id="speed-down">Speed Down</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="simon.js"></script>
+</body>
+</html>

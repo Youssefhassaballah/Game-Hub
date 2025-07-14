@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guesser</title>
+    <link rel="stylesheet" href="guessTheNumber.css">
+</head>
+<body>
+    <!-- Animated background elements -->
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+
+    <div class="container">
+        <button class="back-btn" id="back" onclick="location.href='../index.html'">Back</button>
+
+        <h1>Guess the Number</h1>
+        
+        <div class="difficulty-selector">
+            <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+            <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+            <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+            <button class="difficulty-btn" data-difficulty="expert">Expert</button>
+        </div>
+        
+        <div class="game-info">
+            <div class="info-box">
+                <h3>Time</h3>
+                <div class="info-value timer" id="timer">00:00</div>
+            </div>
+            <div class="info-box">
+                <h3>Attempts</h3>
+                <div class="info-value attempts" id="attempts">0</div>
+            </div>
+            <div class="info-box">
+                <h3>Range</h3>
+                <div class="info-value range" id="range">0-100</div>
+            </div>
+        </div>
+        
+        <div class="guess-input">
+            <input type="number" id="guess" min="0" max="100" placeholder="Enter guess">
+            <button class="submit-btn" id="submit">Submit</button>
+        </div>
+        
+        <div class="message" id="message"></div>
+        
+        <div class="history" id="history">
+            <div>Guess history will appear here</div>
+        </div>
+        
+        <div class="controls">
+            <button class="reset-btn" id="reset">New Number</button>
+            <button id="new-game">New Game</button>
+        </div>
+    </div>
+
+    <script src="guessTheNumber.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+:root {
+    --neon-blue: #08f;
+    --neon-pink: #f0f;
+    --neon-purple: #90f;
+    --neon-green: #0f8;
+    --neon-yellow: #ff0;
+    --dark-bg: #111;
+    --light-text: #eee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 0 0 10px var(--neon-purple), 
+                    0 0 20px var(--neon-purple), 
+                    0 0 30px var(--neon-purple);
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        text-shadow: 0 0 10px var(--neon-purple), 
+                        0 0 20px var(--neon-purple), 
+                        0 0 30px var(--neon-purple);
+    }
+    to {
+        text-shadow: 0 0 15px var(--neon-purple), 
+                        0 0 25px var(--neon-pink), 
+                        0 0 35px var(--neon-blue);
+    }
+}
+
+.difficulty-levels {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.level-btn {
+    background: none;
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.level-btn:hover {
+    background-color: var(--neon-green);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-green), 
+                0 0 20px var(--neon-green);
+    transform: translateY(-2px);
+}
+
+.level-btn.active {
+    background-color: var(--neon-green);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem auto;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(144, 0, 255, 0.2);
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--light-text);
+}
+
+.info-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 5px var(--neon-yellow);
+}
+
+.memory-board {
+    display: grid;
+    grid-gap: 10px;
+    margin: 1.5rem auto;
+    justify-content: center;
+}
+
+.card {
+    width: 80px;
+    height: 80px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-front {
+    background-color: var(--dark-bg);
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--neon-pink);
+    color: transparent;
+}
+
+.card.matched .card-front {
+    background-color: var(--neon-green);
+    color: var(--dark-bg);
+    border-color: var(--neon-green);
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+button {
+    background: none;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: var(--neon-blue);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-blue), 
+                0 0 20px var(--neon-blue);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.new-game-btn {
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+}
+
+.new-game-btn:hover {
+    background-color: var(--neon-green);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-green), 
+                0 0 20px var(--neon-green);
+}
+
+.back-btn {
+    border-color: var(--neon-purple);
+    color: var(--neon-purple);
+    display: grid;
+    justify-self: flex-start;
+    margin-bottom: 2rem;
+}
+
+.back-btn:hover {
+    background-color: var(--neon-purple);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-purple), 
+                0 0 20px var(--neon-purple);
+}
+
+.status {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+    min-height: 2rem;
+}
+
+/* Animated background elements */
+.bg-element {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.bg-element:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    background: var(--neon-blue);
+    top: -100px;
+    left: -100px;
+    animation: float 15s infinite alternate;
+}
+
+.bg-element:nth-child(2) {
+    width: 400px;
+    height: 400px;
+    background: var(--neon-pink);
+    bottom: -150px;
+    right: -100px;
+    animation: float 18s infinite alternate-reverse;
+}
+
+.bg-element:nth-child(3) {
+    width: 200px;
+    height: 200px;
+    background: var(--neon-purple);
+    top: 50%;
+    left: 20%;
+    animation: float 12s infinite alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50px, 50px);
+    }
+    100% {
+        transform: translate(-50px, -50px);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .card {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dots and Boxes</title>
+    <link rel="stylesheet" href="DotsAndBoxes.css">
+</head>
+<body>
+    <!-- Animated background elements -->
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+
+    <div class="container">
+        <button class="back-btn" id="back" onclick="location.href='../index.html'">Back</button>
+
+        <h1>Dots and Boxes</h1>
+        
+        <div class="game-mode">
+            <button class="mode-btn active" data-mode="2player">2 Players</button>
+            <button class="mode-btn" data-mode="computer">vs Computer</button>
+        </div>
+        
+        <div class="game-info">
+            <div class="info-box">
+                <h3>Player 1</h3>
+                <div class="info-value player1" id="score1">0</div>
+            </div>
+            <div class="info-box">
+                <h3>Current Turn</h3>
+                <div class="info-value player1" id="current-player">Player 1</div>
+            </div>
+            <div class="info-box">
+                <h3>Player 2</h3>
+                <div class="info-value player2" id="score2">0</div>
+            </div>
+        </div>
+        
+        <div class="status" id="status">Player 1's turn</div>
+        
+        <div class="game-board" id="board">
+            <!-- Game grid will be generated here -->
+        </div>
+        
+        <div class="controls">
+            <button class="reset-btn" id="reset">Reset Game</button>
+            <button id="new-game">New Game</button>
+        </div>
+    </div>
+
+    <script src="DotsAndBoxes.js"></script>
+</body>
+</html>

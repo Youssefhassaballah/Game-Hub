@@ -1,0 +1,323 @@
+:root {
+    --neon-blue: #08f;
+    --neon-pink: #f0f;
+    --neon-purple: #90f;
+    --neon-green: #0f0;
+    --dark-bg: #111;
+    --light-text: #eee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 0 0 10px var(--neon-blue), 
+                    0 0 20px var(--neon-blue), 
+                    0 0 30px var(--neon-blue);
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        text-shadow: 0 0 10px var(--neon-blue), 
+                        0 0 20px var(--neon-blue), 
+                        0 0 30px var(--neon-blue);
+    }
+    to {
+        text-shadow: 0 0 15px var(--neon-blue), 
+                        0 0 25px var(--neon-purple), 
+                        0 0 35px var(--neon-pink);
+    }
+}
+
+.status {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 136, 255, 0.2);
+}
+
+.info-box {
+    text-align: center;
+}
+
+.info-box h3 {
+    margin-bottom: 0.5rem;
+    color: var(--light-text);
+}
+
+.info-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.timer {
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.attempts {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.range {
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.difficulty-selector {
+    margin-bottom: 2rem;
+}
+
+.difficulty-btn {
+    background: none;
+    border: 2px solid var(--neon-purple);
+    color: var(--neon-purple);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0.5rem;
+}
+
+.difficulty-btn:hover {
+    background-color: var(--neon-purple);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-purple), 
+                0 0 20px var(--neon-purple);
+    transform: translateY(-2px);
+}
+
+.difficulty-btn.active {
+    background-color: var(--neon-purple);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+.guess-input {
+    margin-bottom: 2rem;
+}
+
+input[type="number"] {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--neon-blue);
+    color: var(--light-text);
+    padding: 0.8rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    width: 150px;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-right: 50px;
+    width: 180px;
+}
+
+input[type="number"]:focus {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+button {
+    background: none;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: var(--neon-blue);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-blue), 
+                0 0 20px var(--neon-blue);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.submit-btn {
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+}
+
+.submit-btn:hover {
+    background-color: var(--neon-green);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-green), 
+                0 0 20px var(--neon-green);
+}
+
+.reset-btn {
+    border-color: var(--neon-pink);
+    color: var(--neon-pink);
+}
+
+.reset-btn:hover {
+    background-color: var(--neon-pink);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-pink), 
+                0 0 20px var(--neon-pink);
+}
+
+.back-btn {
+    border-color: var(--neon-purple);
+    color: var(--neon-purple);
+    display: grid;
+    justify-self: flex-start;
+    margin-bottom: 2rem;
+}
+
+.back-btn:hover {
+    background-color: var(--neon-purple);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-purple), 
+                0 0 20px var(--neon-purple);
+}
+
+.message {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    min-height: 2rem;
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.history {
+    margin-top: 2rem;
+    max-height: 150px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.history-item {
+    margin: 0.3rem 0;
+    padding: 0.3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animated background elements */
+.bg-element {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.bg-element:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    background: var(--neon-blue);
+    top: -100px;
+    left: -100px;
+    animation: float 15s infinite alternate;
+}
+
+.bg-element:nth-child(2) {
+    width: 400px;
+    height: 400px;
+    background: var(--neon-pink);
+    bottom: -150px;
+    right: -100px;
+    animation: float 18s infinite alternate-reverse;
+}
+
+.bg-element:nth-child(3) {
+    width: 200px;
+    height: 200px;
+    background: var(--neon-purple);
+    top: 50%;
+    left: 20%;
+    animation: float 12s infinite alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50px, 50px);
+    }
+    100% {
+        transform: translate(-50px, -50px);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .difficulty-btn {
+        margin: 0.3rem;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    input[type="number"] {
+        width: 120px;
+        font-size: 1.2rem;
+    }
+}

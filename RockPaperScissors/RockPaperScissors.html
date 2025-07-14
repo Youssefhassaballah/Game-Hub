@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="RockPaperScissors.css">
+</head>
+<body>
+    <!-- Animated background elements -->
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+
+    <div class="container">
+        <button class="back-btn" id="back" onclick="location.href='../index.html'">Back</button>
+        <h1>Rock Paper Scissors</h1>
+        
+        <div class="scoreboard">
+            <div class="score player-score">
+                <h3>You</h3>
+                <div class="score-value" id="player-score">0</div>
+            </div>
+            <div class="score computer-score">
+                <h3>Computer</h3>
+                <div class="score-value" id="computer-score">0</div>
+            </div>
+        </div>
+        
+        <div class="status" id="status">Choose your weapon!</div>
+        
+        <div class="game-area">
+            <div class="computer-area">
+                <div class="choice-display player-display" id="player-choice">?</div>
+                <div class="vs-text">VS</div>
+                <div class="choice-display computer-display" id="computer-choice">?</div>
+            </div>
+            <div class="player-area">
+                <div class="choices">
+                    <div class="choice rock" data-choice="rock">✊</div>
+                    <div class="choice paper" data-choice="paper">✋</div>
+                    <div class="choice scissors" data-choice="scissors">✌️</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="reset-btn" id="reset">Reset Game</button>
+        </div>
+    </div>
+
+    <script src="RockPaperScissors.js"></script>
+</body>
+</html>

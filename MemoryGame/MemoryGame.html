@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="MemoryGame.css">
+</head>
+<body>
+    <!-- Animated background elements -->
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+    <div class="bg-element"></div>
+
+    <div class="container">
+        <button class="back-btn" id="back" onclick="location.href='../index.html'">Back</button>
+        <h1>Memory Game</h1>
+        
+        <div class="difficulty-levels">
+            <button class="level-btn" id="easy">Easy</button>
+            <button class="level-btn" id="medium">Medium</button>
+            <button class="level-btn" id="hard">Hard</button>
+        </div>
+        
+        <div class="game-info">
+            <div class="info-item">
+                <h3>Moves</h3>
+                <div class="info-value" id="moves">0</div>
+            </div>
+            <div class="info-item">
+                <h3>Pairs</h3>
+                <div class="info-value" id="pairs">0</div>
+            </div>
+            <div class="info-item">
+                <h3>Time</h3>
+                <div class="info-value" id="time">0</div>
+            </div>
+        </div>
+        
+        <div class="status" id="status">Select a difficulty to start</div>
+        
+        <div class="memory-board" id="memory-board">
+            <!-- Cards will be generated here -->
+        </div>
+        
+        <div class="controls">
+            <button class="new-game-btn" id="new-game">New Game</button>
+        </div>
+    </div>
+
+    <script src="MemoryGame.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman game</title>
+    <link rel="stylesheet" href="Hangman.css">
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn" id="back" onclick="location.href='../index.html'">Back</button>
+        <h1>Hangman</h1>
+        
+        <div class="game-area">
+            <div class="hangman-container">
+                <div class="hangman-display" id="hangman-display">
+                    <div class="gallows">
+                        <div class="base"></div>
+                        <div class="pole"></div>
+                        <div class="top-beam"></div>
+                        <div class="noose"></div>
+                    </div>
+                    <div class="hangman-part head" id="head"></div>
+                    <div class="hangman-part body" id="body"></div>
+                    <div class="hangman-part left-arm" id="left-arm"></div>
+                    <div class="hangman-part right-arm" id="right-arm"></div>
+                    <div class="hangman-part left-leg" id="left-leg"></div>
+                    <div class="hangman-part right-leg" id="right-leg"></div>
+                </div>
+            </div>
+            
+            <div class="status" id="status">Guess the word!</div>
+            
+            <div class="word-display" id="word-display">
+                <!-- Letters will be added here by JavaScript -->
+            </div>
+            
+            <div class="keyboard" id="keyboard">
+                <!-- Keyboard letters will be added here by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="controls">
+            
+            <button class="new-game-btn" id="new-game">New Game</button>
+        </div>
+    </div>
+
+    <script src="Hangman.js"></script>
+</body>
+</html>
